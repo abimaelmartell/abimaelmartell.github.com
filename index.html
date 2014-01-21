@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <title>Abimael Martell &raquo; web developer</title>
-  <meta charset="UTF-8">
-</head>
-<body>
-  <p>this page have no content yet, go to <a href="http://blog.abimaelmartell.com/">my blog</a>.</p>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39747273-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<h2>Posts</h2>
+<ul class="posts">
+  {% for post in site.posts %}
+  <li>
+    <h3><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></h3>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Social</h2>
+<ul class="list-inline social">
+  <li><a href="http://twitter.com/abimaelmartell"><i class="fa fa-twitter"></i></a></li>
+  <li><a href="http://github.com/abimaelmartell"><i class="fa fa-github"></i></a></li>
+  <li><a href="http://www.linkedin.com/in/abimaelmartell"><i class="fa fa-linkedin-square"></i></a></li>
+  <li><a href="http://google.com/+abimaelmartell"><i class="fa fa-google-plus-square"></i></a></li>
+</ul>

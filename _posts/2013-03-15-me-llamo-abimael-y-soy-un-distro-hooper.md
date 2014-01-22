@@ -2,7 +2,9 @@
 layout: post
 title: Me llamo Abimael y soy un distro hooper
 date: '2013-03-15T16:14:00-07:00'
-tags: 
+tags:
+- linux
+- distros
 tumblr_url: http://blog.abimaelmartell.com/post/45451931526/me-llamo-abimael-y-soy-un-distro-hooper
 ---
 

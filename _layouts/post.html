@@ -2,9 +2,11 @@
 layout: default
 ---
 
-<article>
+<article class="post">
   <h2>{{ page.title }}</h2>
-  <span>{{ page.date | date_to_long_string }}</span>
+  <div class="info text-center">
+    <time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time>
+  </div>
   <div class="post-content">
     {{ content }}
   </div>

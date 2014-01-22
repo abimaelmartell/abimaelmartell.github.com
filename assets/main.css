@@ -1,5 +1,6 @@
 body{
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
 .container{
@@ -8,7 +9,7 @@ body{
 
 body > header{
   border-top: 5px solid;
-  background: url(http://31.media.tumblr.com/3afad829ce330a66b3bbb98831c1c393/tumblr_mx3tpto69r1st5lhmo1_1280.jpg) center;
+  background: url(header.jpeg);
   height: 250px;
   background-attachment: fixed;
 }
@@ -45,7 +46,7 @@ body > header{
 
 #main h2{
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Droid Serif', serif;
 }
 
@@ -72,4 +73,14 @@ footer{
 }
   footer a{
     color: #666;
+  }
+
+article.post{}
+  article.post h2{
+    margin-bottom: 0px;
+  }
+  article.post .info{
+    text-align: center;
+    color: #666;
+    margin-bottom: 10px;
   }

@@ -3,6 +3,10 @@ body{
   font-size: 16px;
 }
 
+img{
+  max-width: 100%;
+}
+
 .container{
   max-width: 720px;
 }
@@ -84,3 +88,13 @@ article.post{}
     color: #666;
     margin-bottom: 10px;
   }
+
+.github-forkme{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png) no-repeat;
+  width: 149px;
+  height: 149px;
+  text-indent: -99999em;
+}

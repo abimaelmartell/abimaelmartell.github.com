@@ -98,3 +98,7 @@ article.post{}
   height: 149px;
   text-indent: -99999em;
 }
+
+.avatar{
+  margin: 0 0 20px 20px;
+}

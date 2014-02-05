@@ -14,4 +14,9 @@ var require = function(source){
 }
 
 require('//google-analytics.com/ga.js');
-require('//' + disqus_shortname + '.disqus.com/embed.js');
+
+if(document.location.pathname == "/")
+  require('//' + disqus_shortname + '.disqus.com/count.js');
+
+if(document.location.pathname.indexOf("/blog") == 0)
+  require('//' + disqus_shortname + '.disqus.com/embed.js');

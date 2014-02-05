@@ -90,7 +90,7 @@ article.post{}
   }
 
 .github-forkme{
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   background: url(https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png) no-repeat;

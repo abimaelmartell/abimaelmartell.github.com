@@ -17,7 +17,7 @@ I'm happy to announce my new open source project __System Monitor__.
 Is a easy to use, web interface to monitor your server resources like memory, cpu, disk usage and network information.
 
 Written in C using the following libraries:
-- [__sigar__](https://github.com/hyperic/sigar) a library to get information about the system
+- [__sigar__](https://github.com/hyperic/sigar) a library to get information about the system.
 - [__mongoose__](https://github.com/cesanta/mongoose) a cool web server library.
 
 ### Features

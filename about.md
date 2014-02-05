@@ -15,4 +15,4 @@ I been in love with the web since i was twelve, since then i've worked with a lo
 If you want to know more about my work, you can take a look to my [open source projects](projects.html).
 
 ### Contact
-If you want to get in touch, you can write me to [me@abimaelmartell.com](mailto:me@abimaelmartell.com) or through my social accounts.
+If you want to get in touch, you can write me to [abimex@gmail.com](mailto:abimex@gmail.com) or through my social accounts.

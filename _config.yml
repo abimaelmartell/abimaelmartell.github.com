@@ -1,5 +1,12 @@
 name: Abimael Martell
 permalink: /blog/:title.html
 baseurl:
-description: Abimael Martell's personal website and blog
+description: developer
 url: http://abimaelmartell.com
+meta_description: "Abimael Martell's personal website and blog"
+
+markdown: redcarpet
+pygments: true
+logo: false
+paginate: 15
+author: 'Abimael Martell'

@@ -29,53 +29,6 @@
    ========================================================================== */
 
 /* Import the font file with the icons in it */
-@font-face {
-    font-family: 'icons';
-    src:url('../fonts/icons.eot');
-    src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/icons.woff') format('woff'),
-        url('../fonts/icons.ttf') format('truetype'),
-        url('../fonts/icons.svg#icons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Apply these base styles to all icons */
-.icon-ghost:before, 
-.icon-feed:before, 
-.icon-twitter:before, 
-.icon-google-plus:before, 
-.icon-facebook:before {
-    font-family: 'icons';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    text-decoration: none;
-}
-
-/* Each icon is created by inserting the corret character into the 
-   content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-    content: "\e000";
-}
-.icon-feed:before {
-    content: "\e001";
-}
-.icon-twitter:before {
-    content: "\e002";
-    font-size: 1.1em;
-}
-.icon-google-plus:before {
-    content: "\e003";
-}
-.icon-facebook:before {
-    content: "\e004";
-}
-
 
 /* ==========================================================================
    2. General - Setting up some base styles
@@ -713,7 +666,6 @@ margin on the iframe, cause it breaks stuff. */
     margin-left: -15px;
     border: #EBF2F6 1px solid;
     text-align: center;
-    line-height: 2.4rem;
     border-radius: 50px;
     background: #fff;
     transition: box-shadow 0.5s;
@@ -722,9 +674,9 @@ margin on the iframe, cause it breaks stuff. */
 /* The RSS icon, inserted via icon font */
 .subscribe:before {
     color: #D2DEE3;
-    font-size: 10px;
+    font-size: 15px;
     position: absolute;
-    top: 9px;
+    top: 7px;
     left: 9px;
     font-weight: bold;
     transition: color 0.5s ease;

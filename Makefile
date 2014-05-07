@@ -1,6 +1,9 @@
 .PHONY: assets/main.css
 
-CSS_BASE = assets/stylesheets/
+ASSETS = assets/stylesheets/normalize.css\
+         assets/stylesheets/screen.css\
+         assets/stylesheets/syntax.css\
+         assets/stylesheets/main.css
 
 assets/main.css:
-	uglifycss $(CSS_BASE)normalize.css $(CSS_BASE)screen.css $(CSS_BASE)syntax.css $(CSS_BASE)main.css > $@
+	uglifycss $(ASSETS) > $@

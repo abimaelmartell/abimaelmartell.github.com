@@ -1,6 +1,6 @@
 dont readme plz
 
 
-credits:
+thanks to:
 
 - https://github.com/taylorbryant/jekyll-starter-tailwind

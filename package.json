@@ -1,7 +1,7 @@
 {
-  "name": "jekyll-starter-tailwind",
-  "version": "6.0.0",
-  "description": "A starter kit for using Tailwind with Jekyll",
+  "name": "abimael.me",
+  "version": "1.0.0",
+  "description": "My personal website",
   "main": "gulpfile.babel.js",
   "devDependencies": {
     "autoprefixer": "10.1.0",
@@ -15,25 +15,11 @@
     "gulp-postcss": "9.0.0",
     "postcss": "8.2.1",
     "postcss-import": "14.0.0",
+    "@tailwindcss/typography": "^0.4.0",
     "tailwindcss": "2.0.2"
   },
   "scripts": {
     "build:deploy": "cross-env NODE_ENV=production gulp processStylesDeploy",
-    "start": "npm run dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/taylorbryant/jekyll-starter-tailwind.git"
-  },
-  "author": "Taylor Bryant",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/taylorbryant/jekyll-starter-tailwind/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.4.0"
+    "start": "gulp serve"
   }
 }

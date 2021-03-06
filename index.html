@@ -23,8 +23,8 @@ about: 'about.html'
     <h2 class="mb-5 text-4xl text-light">Posts</h2>
     {% for post in site.posts %}
     <article class="mb-5">
-        <h2 class="text-3xl font-bold">
-            <a class="hover:text-gray-500 text-gray-700" href="{{ post.url }}">{{ post.title }}</a> <span class="text-xl text-gray-500 font-light"><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date_to_string }}</time></span>
+        <h2 class="md:text-3xl text-xl font-bold">
+            <a class="hover:text-gray-500 text-gray-700" href="{{ post.url }}">{{ post.title }}</a> <span class="text-xl text-gray-500 font-light md:inline-block block"><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date_to_string }}</time></span>
         </h2>
     </article>
     {% endfor %}

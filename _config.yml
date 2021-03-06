@@ -1,9 +1,14 @@
 name: Abimael Martell
 permalink: /blog/:title.html
-# baseurl: http://abimaelmartell.com
 description: Software Developer
 url: http://abimaelmartell.com
 meta_description: "Abimael Martell's personal website and blog"
 highlighter: rouge
-logo: false
 author: 'Abimael Martell'
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      comments: true

@@ -22,13 +22,13 @@ layout: default
             <!-- If we want to display author's name and bio -->
             {% if site.author %}
                 <section class="flex items-center">
-                    <a href="{{ site.baseurl }}" class="w-28 mr-5">
+                    <a href="{{ site.baseurl }}/about" class="w-28 mr-5">
                         <img class="rounded-full border-4 shadow-sm" src="//www.gravatar.com/avatar/df8e5930113ab9844be90e1271e153fb.png?s=200" />
                     </a>
 
                     <article>
-                        <h4 class="font-bold text-xl">{{ site.author }}</h4>
-                        <p>Software Developer</p>
+                        <h4 class="font-bold text-xl"><a href="{{ site.baseurl }}/about">{{ site.author }}</a></h4>
+                        <p>Software Developer at Confidential Startup</p>
                     </article>
                 </section>                
             {% endif %}

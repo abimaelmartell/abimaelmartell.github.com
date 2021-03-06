@@ -9,6 +9,7 @@ import tailwindcss from "tailwindcss";
 
 const SITE_ROOT = "./_site";
 const POST_BUILD_STYLESHEET = `${SITE_ROOT}/assets/`;
+const DEPLOY_BUILD_STYLESHEET = `./assets/`;
 const PRE_BUILD_STYLESHEET = "./_css/main.css";
 const TAILWIND_CONFIG = "./tailwind.config.js";
 
@@ -41,6 +42,20 @@ task("processStyles", () => {
       ])
     )
     .pipe(dest(POST_BUILD_STYLESHEET));
+});
+
+task("processStylesDeploy", () => {
+  browserSync.notify("Compiling styles for deployment...");
+
+  return src(PRE_BUILD_STYLESHEET)
+    .pipe(
+      postcss([
+        atimport(),
+        tailwindcss(TAILWIND_CONFIG),
+        ...(isDevelopmentBuild ? [] : [autoprefixer(), cssnano()]),
+      ])
+    )
+    .pipe(dest(DEPLOY_BUILD_STYLESHEET));
 });
 
 task("startServer", () => {

@@ -18,10 +18,7 @@
     "tailwindcss": "2.0.2"
   },
   "scripts": {
-    "build:production": "cross-env NODE_ENV=production gulp",
-    "build:dev": "cross-env NODE_ENV=development gulp",
-    "build": "npm run build:production",
-    "dev": "cross-env NODE_ENV=development gulp serve",
+    "build:deploy": "cross-env NODE_ENV=production gulp processStylesDeploy",
     "start": "npm run dev"
   },
   "repository": {

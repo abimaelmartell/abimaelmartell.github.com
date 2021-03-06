@@ -5,57 +5,28 @@ cover: false
 about: 'about.html'
 ---
 
-<header class="site-head" {% if page.cover %} style="background-image: url({{ page.cover }})"{% endif %}>
-    <div class="vertical">
-        <div class="site-head-content" class="inner">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-            <h1 class="blog-title">{{ site.name }}</h1>
-            <h2 class="blog-description"> 
-                {{ site.description }}. 
-                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
-            </h2>
-        </div>
+<div class="bg-home-image bg-center bg-cover flex text-white h-screen">
+    <div class="py-10 bg-black bg-opacity-75 flex-1 w-full items-center flex justify-center flex-col">
+        <img class="rounded-full border-4 shadow-sm mb-5" src="http://www.gravatar.com/avatar/df8e5930113ab9844be90e1271e153fb.png?s=200" alt="" />
+        <h1 class="md:text-6xl text-3xl mb-5">Hi, i'm <span class="font-bold">Abimael Martell</span></h1>
+        <p>I'm a Software Developer from Tijuana, México 🇲🇽</p>
+        <p>Welcome to my personal website!</p>
+
+        <ul class="flex underline mt-5 text-2xl">
+            <li><a class="hover:text-gray-400 mx-5" href="#posts">Blog</a></li>
+            <li><a class="hover:text-gray-400 mx-5" href="/about">About</a></li>
+        </ul>
     </div>
-</header>
+</div>
 
-<main class="content" role="main">
-
-    {% for post in paginator.posts %}
-
-    <article class="post">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date_to_string }}</time> {{!tags prefix="on "}}</span>
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-
-        </header>
-        <section class="post-excerpt">
-            {{ post.excerpt }}
-        </section>
+<main class="2xl:w-3/5 md:w-4/5 w-11/12 mx-auto my-5" id="posts">
+    <h2 class="mb-5 text-4xl text-light">Posts</h2>
+    {% for post in site.posts %}
+    <article class="mb-5">
+        <h2 class="text-3xl font-bold">
+            <a class="hover:text-gray-500 text-gray-700" href="{{ post.url }}">{{ post.title }}</a> <span class="text-xl text-gray-500 font-light"><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date_to_string }}</time></span>
+        </h2>
     </article>
-
     {% endfor %}
-
-    <nav class="pagination" role="pagination">
-
-        {% if paginator.previous_page %}
-          {% if paginator.previous_page == 1 %}
-          <a class="newer-posts" href="/" title="Previous Page">&laquo; Newer Posts</a>
-          {% else %}
-          <a class="newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Newer Posts</a>
-          {% endif %}
-        {% endif %}
-
-        <span class="page-number"> Page {{paginator.page}} of {{paginator.total_pages}} </span>
-        
-        {% if paginator.next_page %} 
-        <a class="older-posts" href="/page{{ paginator.next_page }}/" title="Next Page">Older Posts &raquo;</a>
-        {% endif %} 
-    </nav>
-    
-
 </main>
 

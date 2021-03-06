@@ -46,5 +46,3 @@ Then run `./system_monitor` and point your browser to [localhost:3000](http://lo
 
 
 [__Follow the development on Github__](https://github.com/abimaelmartell/system_monitor), issues and pull requests are welcome :)
-
-<a class="github-forkme" href="https://github.com/abimaelmartell/system_monitor">Fork Me</a>

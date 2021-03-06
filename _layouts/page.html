@@ -2,24 +2,14 @@
 layout: default
 ---
 
-<main class="content" role="main">
-    <article class="post">
-        <header class="post-header">
-            <a id="blog-logo" href="{{site.baseurl}}/">
-                {% if site.logo %}
-                    <img src="{{site.logo}}" alt="{{ site.name }}" />
-                {% else %}
-                    <span class="blog-title">{{ site.name }}</span>
-                {%endif%} 
-            </a>
-        </header>
+<main class="2xl:w-3/5 md:w-4/5 w-11/12 mx-auto my-5">
+    {% include back-button.html %}
 
+    <article class="prose prose-lg max-w-none">
         <h1 class="post-title">{{ page.title }}</h1>
 
         <section class="post-content">
             {{content}}
         </section>
-
     </article>
-
 </main>

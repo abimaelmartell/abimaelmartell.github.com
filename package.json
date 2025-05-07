@@ -4,22 +4,24 @@
   "description": "My personal website",
   "main": "gulpfile.babel.js",
   "devDependencies": {
-    "autoprefixer": "10.1.0",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.6",
     "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",
-    "browser-sync": "2.26.13",
-    "cross-env": "7.0.3",
-    "cross-spawn": "7.0.3",
-    "cssnano": "4.1.10",
-    "gulp": "4.0.2",
-    "gulp-postcss": "9.0.0",
-    "postcss": "8.2.1",
-    "postcss-import": "14.0.0",
-    "@tailwindcss/typography": "^0.4.0",
-    "tailwindcss": "2.0.2"
+    "browser-sync": "^2.29.3",
+    "concurrently": "^9.1.2",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.0.2"
   },
   "scripts": {
-    "build:deploy": "cross-env NODE_ENV=production gulp processStylesDeploy",
-    "start": "gulp serve"
+    "build:jekyll": "bundle exec jekyll build",
+    "build": "npm run build:css && npm run build:jekyll",
+    "dev:jekyll": "NODE_ENV=development bundle exec jekyll build --incremental --watch",
+    "dev:css": "NODE_ENV=development postcss _css/main.css -o _site/assets/main.css -w",
+    "serve": "browser-sync start --server _site --files '_site/**/*' --port 4000",
+    "start": "concurrently -k \"npm:dev:jekyll\" \"npm:dev:css\" \"npm:serve\""
   }
 }

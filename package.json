@@ -19,7 +19,7 @@
   "scripts": {
     "build:jekyll": "bundle exec jekyll build",
     "build": "npm run build:css && npm run build:jekyll",
-    "build:css": "postcss _css/main.css -o _site/assets/main.css --minify",
+    "build:css": "postcss _css/main.css -o assets/main.css --minify",
     "dev:jekyll": "NODE_ENV=development bundle exec jekyll build --incremental --watch",
     "dev:css": "NODE_ENV=development postcss _css/main.css -o _site/assets/main.css -w",
     "serve": "browser-sync start --server _site --files '_site/**/*' --port 4000",

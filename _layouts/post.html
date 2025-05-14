@@ -2,52 +2,70 @@
 layout: default
 ---
 
+<section
+  class="bg-home-image bg-cover bg-center relative min-h-[50vh] w-full mb-8"
+>
+  <div
+    class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-6"
+  >
+    <a
+      href="{{ site.baseurl }}/"
+      class="inline-flex items-center gap-2 text-sm text-white hover:text-gray-200 mb-6 absolute top-5 left-5"
+    >
+      <i class="fas fa-chevron-left text-lg mr-2"></i> Back to home
+    </a>
+
+    <h1 class="text-4xl md:text-5xl font-bold">{{ page.title }}</h1>
+    <p class="mt-2 text-lg">
+      <time datetime="{{ page.date | date:'%Y-%m-%d' }}"
+        >{{ page.date | date_to_string }}</time
+      >
+      {% if site.author %} &middot; {{ site.author }} {% endif %}
+    </p>
+  </div>
+</section>
+
 <main class="2xl:w-3/5 md:w-4/5 w-11/12 mx-auto my-5">
-    <article class="post">
-        {% include back-button.html %}
-        
-        <div class="mb-5">
-            <h1 class="text-4xl mb-2">{{ page.title }}</h1>
-            <p>
-                <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-            </p>
-        </div>
+  <article class="post">
+    <section class="prose prose-lg max-w-none">{{content}}</section>
 
-        <section class="prose prose-lg max-w-none">
-            {{content}}
-        </section>
-
-        <footer>
-            <hr class="w-8/12 mx-auto border-t my-5" />
-            <!-- If we want to display author's name and bio -->
-            {% if site.author %}
-                <section class="flex items-center">
-                    <a href="{{ site.baseurl }}/about" class="w-28 mr-5">
-                        <img class="rounded-full border-4 shadow-sm" src="//www.gravatar.com/avatar/df8e5930113ab9844be90e1271e153fb.png?s=200" />
-                    </a>
-
-                    <article>
-                        <h4 class="font-bold text-xl"><a href="{{ site.baseurl }}/about">{{ site.author }}</a></h4>
-                        <p>Software Developer at Confidential Startup</p>
-                    </article>
-                </section>                
-            {% endif %}
-            
-            <hr class="w-8/12 mx-auto border-t my-5" />
-            {% if page.comments %}
-            <div id="disqus_thread"></div>
-            <script>
-                (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://abimaelmartell-blog.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            {% endif %}
-        </footer>
-
-    </article>
-
+    <footer>
+      <hr class="w-8/12 mx-auto border-t my-5" />
+      {% if site.author %}
+      <section class="flex items-center">
+        <a href="{{ site.baseurl }}/about" class="w-28 mr-5">
+          <img
+            class="rounded-full border-4 shadow-sm"
+            src="//www.gravatar.com/avatar/df8e5930113ab9844be90e1271e153fb.png?s=200"
+          />
+        </a>
+        <article>
+          <h4 class="font-bold text-xl">
+            <a href="{{ site.baseurl }}/about">{{ site.author }}</a>
+          </h4>
+          <p>Software Developer</p>
+        </article>
+      </section>
+      {% endif %}
+      <hr class="w-8/12 mx-auto border-t my-5" />
+      {% if page.comments %}
+      <div id="disqus_thread"></div>
+      <script>
+        (function () {
+          var d = document,
+            s = d.createElement("script");
+          s.src = "https://abimaelmartell-blog.disqus.com/embed.js";
+          s.setAttribute("data-timestamp", +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript
+        >Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript"
+          >comments powered by Disqus.</a
+        >
+      </noscript>
+      {% endif %}
+    </footer>
+  </article>
 </main>

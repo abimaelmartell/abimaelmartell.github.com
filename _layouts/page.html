@@ -3,13 +3,16 @@ layout: default
 ---
 
 <main class="2xl:w-3/5 md:w-4/5 w-11/12 mx-auto my-5">
-    {% include back-button.html %}
+    <a
+    href="{{ site.baseurl }}/"
+    class="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-gray-400 mb-10 no-underline"
+>
+    <i class="fas fa-chevron-left text-lg mr-2"></i> Back to home
+</a>
 
-    <article class="prose prose-lg max-w-none">
-        <h1 class="post-title">{{ page.title }}</h1>
+  <article class="prose prose-lg max-w-none">
+    <h1 class="post-title">{{ page.title }}</h1>
 
-        <section class="post-content">
-            {{content}}
-        </section>
-    </article>
+    <section class="post-content">{{content}}</section>
+  </article>
 </main>

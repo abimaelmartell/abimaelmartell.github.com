@@ -3,7 +3,14 @@
 <head>   
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{{ site.name }} - {{ site.description }}</title>
+    <title>
+        {% if page.title %}
+        {{ page.title }} &ndash; {{ site.name }}
+      {% else %}
+        {{ site.name }} &ndash; {{ site.description }}
+      {% endif %}
+    
+    </title>
     <meta name="description" content="{{ site.meta_description}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />

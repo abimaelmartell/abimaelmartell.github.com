@@ -4,13 +4,18 @@ module.exports = {
   content: [`_site/**/*.html`],
   theme: {
     extend: {
-      backgroundImage: theme => ({
-        'home-image': "url('/assets/images/barbara-zandoval-FqdyGFmSttc-unsplash.jpg')",
-      }),
+      colors: {
+        paper: '#FDFDFB',
+        ink: '#1B1917',
+        faded: '#6E6A63',
+        line: '#E8E5DF',
+        rosa: '#E4007C',
+      },
     },
     fontFamily: {
-      sans: ['Roboto', ...defaultTheme.fontFamily.sans],
-      mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+      serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif'],
+      mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+      sans: [...defaultTheme.fontFamily.sans],
     },
   },
   variants: {},

@@ -3,6 +3,152 @@
 @tailwind utilities;
 
 /***************************************************
+  * Base
+  ***************************************************/
+
+::selection {
+  background-color: #e4007c;
+  color: #fff;
+}
+
+a:focus-visible {
+  outline: 2px solid #e4007c;
+  outline-offset: 2px;
+}
+
+/***************************************************
+  * Post body — slim reading column, photos break out
+  *
+  * Text stays in the narrow column; any markdown
+  * image escapes it. Two images on the same markdown
+  * line render side by side. An italic-only line
+  * right after an image becomes its caption.
+  ***************************************************/
+
+.post-body {
+  color: #1b1917;
+}
+
+.post-body a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration-color: rgba(228, 0, 124, 0.4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.post-body a:hover {
+  color: #e4007c;
+  text-decoration-color: #e4007c;
+}
+
+.post-body p:has(> img) {
+  width: min(72rem, calc(100vw - 2.5rem));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.post-body p:has(> img) > img {
+  width: 100%;
+  margin: 0;
+  border-radius: 0.25rem;
+}
+
+.post-body p:has(> img + img) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.post-body p:has(> img + img) > img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .post-body p:has(> img + img) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* three images on one line: collage — big photo left, two stacked right */
+.post-body p:has(> img + img + img) {
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: repeat(2, 1fr);
+  aspect-ratio: 16 / 10;
+}
+
+.post-body p:has(> img + img + img) > img:first-child {
+  grid-row: span 2;
+}
+
+@media (max-width: 640px) {
+  .post-body p:has(> img + img + img) {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    aspect-ratio: auto;
+  }
+
+  .post-body p:has(> img + img + img) > img:first-child {
+    grid-row: auto;
+  }
+}
+
+.post-body p:has(> img) + p:has(> em:only-child),
+.photo-caption {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #6e6a63;
+  text-align: center;
+  margin-top: 0.85rem;
+  margin-bottom: 2.75rem;
+}
+
+.post-body p:has(> img) + p:has(> em:only-child) > em {
+  font-style: normal;
+}
+
+.post-body p:has(> img) + p:has(> em:only-child)::before,
+.photo-caption::before {
+  content: '';
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  background-color: #e4007c;
+  margin-right: 0.7em;
+  vertical-align: 0.05em;
+}
+
+/* photo credit footlines — tag an image {:.credit-event} or {:.credit-own};
+   the text comes from the post's front matter via CSS variables */
+.post-body p:has(> img.credit-event)::after,
+.post-body p:has(> img.credit-own)::after,
+.photo-credit {
+  display: block;
+  grid-column: 1 / -1;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a29e95;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.post-body p:has(> img.credit-event)::after {
+  content: var(--credit-event, '');
+}
+
+.post-body p:has(> img.credit-own)::after {
+  content: var(--credit-own, '');
+}
+
+/***************************************************
   * Code blocks (rouge)
   * Solarized Light Theme
   ***************************************************/

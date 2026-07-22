@@ -54,7 +54,7 @@ Throughout the event I walked the rooms and talked with teams about their ideas 
 
 Which brings me to the thing I cared most about: seeing how teams actually used Firecrawl. It's one thing to build the product; it's another to watch people reach for it under time pressure and bend it toward problems we never anticipated.
 
-![Me on stage opening the Firecrawl talk](/assets/images/platanus-hack-2026/pitch-title.jpg){:.credit-own} ![Walking through what you can build with web data](/assets/images/platanus-hack-2026/pitch-build.jpg)
+![Me on stage giving the Firecrawl talk](/assets/images/platanus-hack-2026/stage-wide.jpg){:.credit-event} ![Mid-gesture during the Firecrawl talk](/assets/images/platanus-hack-2026/stage-portrait.jpg)
 
 *Giving the Firecrawl talk — dale acceso web a tus agentes*
 

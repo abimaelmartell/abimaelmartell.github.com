@@ -6,8 +6,8 @@ cover_alt: Talking with hackers at the Firecrawl table during Platanus Hack 26
 cover_caption: Talking web data at the Firecrawl table
 cover_position: center 42%
 cover_credit: event
-feature_image: /assets/images/platanus-hack-2026/pitch-title.jpg
-feature_position: center 35%
+feature_image: /assets/images/platanus-hack-2026/stage-wide.jpg
+feature_position: center 60%
 credits:
   event: "Photo: Platanus"
   own: "Photo: the Martells"
